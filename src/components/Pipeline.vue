@@ -10,7 +10,7 @@
 
     <pipeline-line v-for="(item,index) in lineList" :key="'line'+index" :showArrow="showArrow" :path="item.path"
       :weight="item.weight" :lineStyle="lineStyle" />
-    <pipeline-node v-for="(item,idx) in nodeList" :key="'node'+idx" :hint="item.hint" :status="item.status"
+    <pipeline-node v-for="(item,idx) in nodeList" :key="'node'+idx" :hint="item.hint" :showHint="showHint" :status="item.status"
       :label="item.name" :x="item.x" :y="item.y" :node="item" :index="idx" :selected="selectedList[idx]"
       @click="handleClick" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave"/>
   </svg>
@@ -57,6 +57,10 @@ export default {
     showArrow: {
       type: Boolean,
       default: false
+    },
+    showHint: {
+      type: Boolean,
+      default: true
     }
   },
   data() {

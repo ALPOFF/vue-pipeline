@@ -36,7 +36,7 @@
       </g>
     </g>
 
-    <title>{{hint}}</title>
+    <title v-if="showHint">{{hint}}</title>
 
     <!-- high light -->
     <circle r="19" class="pipeline-node-hittarget" fill-opacity="0" stroke="none">
@@ -82,6 +82,10 @@ export default {
     selected: {
       type: Boolean,
       default: false
+    },
+    showHint: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
